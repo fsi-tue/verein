@@ -1,0 +1,7 @@
+.cache/
+.texmf-var/
+texmf/
+*.aux
+*.log
+*.out
+assets/denker.pdf

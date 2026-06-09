@@ -1,0 +1,279 @@
+\documentclass[10pt]{article}
+
+\usepackage[paperwidth=210mm,paperheight=148mm,margin=0mm]{geometry}
+\usepackage[ngerman]{babel}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{fontawesome5}
+\usepackage{qrcode}
+\usepackage{ragged2e}
+\usepackage{microtype}
+
+\setmainfont{DejaVu Sans}
+\newfontfamily\logofont{DejaVu Sans}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+\definecolor{flyerblue}{HTML}{000080}
+\definecolor{flyerink}{HTML}{20252B}
+\definecolor{flyerline}{HTML}{6A7280}
+\definecolor{flyerbox}{HTML}{F3F4F6}
+
+\newcommand{\fsititle}{%
+  {\logofont\bfseries\itshape fsi}{\logofont\mdseries\upshape .ev}%
+}
+
+\newcommand{\panel}[5]{%
+  \begin{scope}[shift={(#1,#2)}]
+    \fill[#3] (0,0) rectangle (105mm,148mm);
+    \draw[flyerline,line width=.35pt] (105mm,0) -- (105mm,148mm);
+    \node[
+      anchor=north west,
+      text width=82mm,
+      align=left,
+      inner sep=0pt
+    ] at (11mm,133mm) {%
+      {\color{#4}\fontsize{24}{27}\selectfont\bfseries #5\par}
+    };
+  \end{scope}%
+}
+
+\newcommand{\headingaccent}[2]{%
+  \begin{scope}[shift={(#1,#2)}]
+    \draw[flyerblue,line width=.7pt,line cap=butt] (11mm,124mm) -- (50mm,124mm);
+  \end{scope}%
+}
+
+\newcommand{\corneraccent}[2]{%
+  \begin{scope}[shift={(#1,#2)}]
+    \draw[flyerblue,line width=.45pt,line cap=butt] (11mm,11mm) -- (31mm,11mm);
+  \end{scope}%
+}
+
+\newcommand{\foldline}{%
+  \draw[white,line width=1.4pt] (105mm,0mm) -- (105mm,148mm);
+  \draw[flyerline,line width=.75pt] (105mm,0mm) -- (105mm,148mm);
+}
+
+\newcommand{\smallnote}[4][north west]{%
+  \node[
+    anchor=#1,
+    text width=72mm,
+    align=left,
+    inner sep=0pt
+  ] at (#2,#3) {%
+    {\color{flyerblue}\fontsize{6.4}{8}\selectfont #4}%
+  };
+}
+
+\newcommand{\contacticon}[3]{%
+  \node[anchor=center,inner sep=0pt] at (#1,#2) {%
+    {\color{flyerblue}\fontsize{7}{8}\selectfont\faIcon{#3}}%
+  };
+}
+
+\newcommand{\supportitem}[3]{%
+  \node[anchor=center,inner sep=0pt] at (14mm,#1) {%
+    {\color{flyerblue}\fontsize{6.3}{7}\selectfont\faIcon{#2}}%
+  };
+  \node[anchor=west,text width=67mm,align=left,inner sep=0pt] at (20mm,#1) {%
+    \begin{minipage}[c]{67mm}
+      {\color{flyerink}\fontsize{7.2}{7.8}\selectfont #3\par}%
+    \end{minipage}%
+  };
+}
+
+\newcommand{\membercard}[7]{%
+  \fill[flyerbox] (116mm,#1) rectangle (194mm,#2);
+  \draw[flyerblue,line width=1.8pt,line cap=butt] (116mm,#1) -- (116mm,#2);
+  \node[anchor=center,inner sep=0pt] at (125.5mm,#3) {%
+    {\color{flyerblue}\fontsize{8}{9}\selectfont\faIcon{#4}}%
+  };
+  \node[
+    anchor=north west,
+    text width=58mm,
+    align=left,
+    inner sep=0pt
+  ] at (133mm,#5) {%
+    {\color{flyerblue}\fontsize{8.6}{10}\selectfont\bfseries #6\par}
+    {\color{flyerink}\fontsize{7}{8.7}\selectfont #7}%
+  };
+}
+
+\begin{document}
+
+% Aussenseite: links Rückseite, rechts Titelseite.
+\begin{tikzpicture}[remember picture,overlay,x=1mm,y=1mm]
+  \begin{scope}[shift={(current page.south west)}]
+  \panel{0mm}{0mm}{white}{flyerblue}{Kontakt}
+  \panel{105mm}{0mm}{white}{flyerblue}{}
+  \headingaccent{0mm}{0mm}
+  \corneraccent{0mm}{0mm}
+  \corneraccent{105mm}{0mm}
+
+  \node[
+    anchor=north west,
+    text width=72mm,
+    align=left,
+    inner sep=0pt
+  ] at (18mm,109mm) {%
+    {\color{flyerblue}\fontsize{7.2}{9}\selectfont\bfseries Adresse\par}
+    {\color{flyerink}\fontsize{8.8}{11.2}\selectfont
+      Fachschaft Informatik Tübingen e.V.\\
+      Sand 14\\
+      72076 Tübingen}%
+  };
+  \contacticon{13mm}{101mm}{map-marker-alt}
+
+  \draw[flyerblue,line width=.45pt,line cap=round] (11mm,80mm) -- (82mm,80mm);
+
+  \node[
+    anchor=north west,
+    text width=72mm,
+    align=left,
+    inner sep=0pt
+  ] at (18mm,72mm) {%
+    {\color{flyerblue}\fontsize{7.2}{9}\selectfont\bfseries Direktkontakt\par}
+    {\color{flyerink}\fontsize{8.8}{11.2}\selectfont
+      {\color{flyerblue}\faIcon{envelope}}\hspace{1.5mm}fsi@fsi.uni-tuebingen.de {\fontsize{7.3}{9}\selectfont(Fachschaft)}\\[1mm]
+      {\color{flyerblue}\faIcon{envelope}}\hspace{1.5mm}verein@fsi.uni-tuebingen.de {\fontsize{7.3}{9}\selectfont(Verein)}}%
+  };
+  \contacticon{13mm}{64mm}{paper-plane}
+
+  \draw[flyerblue,line width=.55pt,line cap=round] (11mm,55mm) -- (82mm,55mm);
+  \node[
+    anchor=north west,
+    inner sep=0pt
+  ] at (58mm,45mm) {%
+    {\color{flyerblue}\qrcode[height=25mm]{https://www.fsi.uni-tuebingen.de/verein}}%
+  };
+  \node[
+    anchor=north,
+    text width=34mm,
+    align=center,
+    inner sep=0pt
+  ] at (70.5mm,18mm) {%
+    {\color{flyerblue}\fontsize{5.3}{6.6}\selectfont www.fsi.uni-tuebingen.de/verein}%
+  };
+  \node[
+    anchor=north west,
+    text width=38mm,
+    align=left,
+    inner sep=0pt
+  ] at (18mm,45mm) {%
+    {\color{flyerblue}\fontsize{7.2}{9}\selectfont\bfseries Website\par}
+    {\color{flyerink}\fontsize{8.5}{11}\selectfont Mitgliedsanträge, weitere Informationen, News und der aktuelle Vorstand.}%
+  };
+  \contacticon{13mm}{37mm}{globe}
+  \node[anchor=south west,inner sep=0pt] at (11mm,7mm) {%
+    {\color{flyerline}\fontsize{5.5}{7}\selectfont Version 2026/06 · built with LaTeX}%
+  };
+
+  \node[anchor=north,inner sep=0pt] at (157.5mm,128mm) {%
+    {\color{flyerblue}\fontsize{30}{34}\selectfont\fsititle}%
+  };
+  \draw[flyerblue,line width=.6pt,line cap=round] (143mm,119.5mm) -- (172mm,119.5mm);
+  \node[
+    anchor=north,
+    text width=78mm,
+    align=center,
+    inner sep=0pt
+  ] at (157.5mm,113mm) {%
+    {\color{flyerink}\fontsize{11}{14}\selectfont Fachschaft Informatik Tübingen e.V.}%
+  };
+  \node[
+    anchor=north,
+    text width=78mm,
+    align=center,
+    inner sep=0pt
+  ] at (157.5mm,103mm) {%
+    {\color{flyerblue}\fontsize{9}{12}\selectfont Förderverein der Fachschaft Informatik\\an der Universität Tübingen}%
+  };
+  \node[
+    rotate=4,
+    fill=flyerblue,
+    draw=flyerblue,
+    rounded corners=.3mm,
+    inner xsep=3.5mm,
+    inner ysep=1.8mm
+  ] at (184mm,39mm) {%
+    {\color{white}\fontsize{8.5}{10}\selectfont\bfseries Unterstütze uns!}%
+  };
+  \node[anchor=center,inner sep=0pt] at (157.5mm,62mm) {%
+    \includegraphics[width=54mm]{assets/denker.pdf}%
+  };
+
+  \foldline
+  \end{scope}
+\end{tikzpicture}
+\newpage
+
+% Innenseite: links Innen links, rechts Innen rechts.
+\begin{tikzpicture}[remember picture,overlay,x=1mm,y=1mm]
+  \begin{scope}[shift={(current page.south west)}]
+  \panel{0mm}{0mm}{white}{flyerblue}{Der Verein}
+  \panel{105mm}{0mm}{white}{flyerblue}{Mitglied werden}
+  \headingaccent{0mm}{0mm}
+  \headingaccent{105mm}{0mm}
+  \begin{scope}[shift={(0mm,0mm)}]
+    \draw[flyerblue,line width=.55pt,line cap=round] (11mm,11mm) -- (31mm,11mm);
+  \end{scope}
+  \corneraccent{105mm}{0mm}
+
+  \fill[flyerbox] (11mm,112mm) rectangle (88mm,84mm);
+  \draw[flyerblue,line width=1.8pt,line cap=butt] (11mm,112mm) -- (11mm,84mm);
+  \node[
+    anchor=north west,
+    text width=64mm,
+    align=left,
+    inner sep=0pt
+  ] at (19mm,107mm) {%
+    {\color{flyerblue}\fontsize{8.6}{10}\selectfont\bfseries Fachschaftsarbeit möglich machen\par}
+    {\color{flyerink}\fontsize{6.55}{8.15}\selectfont Der \fsititle{} ermöglicht Fachschaftsarbeit dort, wo die Strukturen der Verfassten Studierendenschaft an ihre Grenzen stoßen. Er gibt der Fachschaft Informatik finanzielle und organisatorische Rückendeckung.}%
+  };
+
+  \node[
+    anchor=north west,
+    text width=73mm,
+    align=left,
+    inner sep=0pt
+  ] at (11mm,78mm) {%
+    {\color{flyerblue}\fontsize{7.5}{9}\selectfont\bfseries Was der Verein unterstützt\par}%
+  };
+
+  \supportitem{68.5mm}{graduation-cap}{Unterstützung von Erstiprogrammen}
+  \supportitem{60mm}{calendar-alt}{Durchführung von Veranstaltungen wie Clubhaus- und Sommerfeste}
+  \supportitem{51.5mm}{shield-alt}{Unfallversicherung für Helfende auf diesen Veranstaltungen}
+  \supportitem{42.5mm}{dice}{Bereitstellung von Gesellschafts- und Outdoor-Spielen am Sand}
+  \supportitem{34mm}{toolbox}{Material, Ausstattung und Infrastruktur für Fachschaftsarbeit}
+
+  \smallnote{11mm}{22mm}{Für all diese Dinge sammelt der Verein finanzielle Mittel über Sponsoring und Fördermitgliedschaften (siehe rechts).}
+
+  \membercard
+    {112mm}
+    {74mm}
+    {103.5mm}
+    {user}
+    {106.8mm}
+    {Ordentliches Mitglied}
+    {Ordentliches Mitglied können alle immatrikulierten Studierenden werden, die zur Fachschaft Informatik gehören. Der symbolische Mitgliedsbeitrag beträgt 1\,€ pro Jahr. Ordentliche Mitglieder können sich einbringen, abstimmen und Projekte direkt mitgestalten.}
+
+  \membercard
+    {70mm}
+    {36mm}
+    {61.8mm}
+    {heart}
+    {64.8mm}
+    {Fördermitglied}
+    {Fördermitglied kann jede Person werden, die die Fachschaft finanziell und durch ihre Verbundenheit unterstützen möchte. Der Mitgliedsbeitrag beträgt \textit{mindestens} 1\,€ pro Jahr und kann frei gewählt werden.}
+
+  \smallnote[south west]{116mm}{17mm}{Mitgliedsanträge gibt es online. Den QR-Code und die Kontaktdaten findest du auf der Rückseite.}
+
+  \foldline
+  \end{scope}
+\end{tikzpicture}
+
+\end{document}

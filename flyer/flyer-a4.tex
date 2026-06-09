@@ -1,0 +1,36 @@
+\documentclass{article}
+
+\usepackage[paperwidth=210mm,paperheight=297mm,margin=0mm]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+\definecolor{cutline}{HTML}{6A7280}
+
+\newcommand{\cutmarks}{%
+  \draw[white,line width=1.4pt] (0mm,148.5mm) -- (210mm,148.5mm);
+  \draw[cutline,dash pattern=on 3mm off 2mm,line width=.65pt] (0mm,148.5mm) -- (210mm,148.5mm);
+}
+
+\newcommand{\aivsheet}[1]{%
+  \begin{tikzpicture}[remember picture,overlay,x=1mm,y=1mm]
+    \begin{scope}[shift={(current page.south west)}]
+      \node[anchor=center,inner sep=0pt] at (105mm,74.25mm) {%
+        \includegraphics[page=#1,width=210mm]{flyer-a5.pdf}%
+      };
+      \node[anchor=center,inner sep=0pt] at (105mm,222.75mm) {%
+        \includegraphics[page=#1,width=210mm]{flyer-a5.pdf}%
+      };
+      \cutmarks
+    \end{scope}
+  \end{tikzpicture}%
+}
+
+\begin{document}
+\aivsheet{1}
+\newpage
+\aivsheet{2}
+\end{document}

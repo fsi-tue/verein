@@ -1,0 +1,337 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,
+includehead,
+nomarginpar,
+lmargin=0.5in,
+rmargin=0.5in,
+tmargin=0.2in,
+bmargin=1.0in,
+headheight=1in,
+headsep=0.2in,
+footskip=0.7in
+]{geometry}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{makecell}
+\usepackage{graphicx}
+\usepackage{layout}
+\usepackage{tabularx}
+\usepackage{amssymb}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage[table]{xcolor}
+\usepackage{etoolbox}
+\usepackage[ngerman]{babel}
+\usepackage{titlesec}
+\usepackage{lastpage}
+\usepackage[export]{adjustbox}
+\usepackage{tgadventor}
+\usepackage{enumitem}
+
+% section numbering and co
+\renewcommand\thesection{§ \arabic{section}}
+\renewcommand\thesubsection{(\arabic{subsection})}
+\titlespacing{\section}{0pt}{0.5\baselineskip}{5pt} % abstand zwischen sections
+\titlespacing{\subsection}{0pt}{0.5\baselineskip}{5pt} % abstand zwischen subsections
+\titleformat{\subsection}[runin]{\normalfont\bfseries}{\thesubsection}{0.5em}{}
+% table config and env
+\setlength{\arrayrulewidth}{0.5mm}
+\setlength{\tabcolsep}{10pt}
+\renewcommand{\arraystretch}{1.5}
+
+% compact lists
+\setlist{noitemsep} 
+
+% fix toc
+\makeatletter
+\renewcommand{\numberline}[1]{#1\hspace{0.5em}}
+\makeatother
+
+\begin{document}
+% header footer config
+\pagestyle{fancy}
+\fancyhead{} % clear all header fields
+\fancyhead[L]{\textbf{Vereinssatzung} \\ Fachschaft Informatik Tübingen e.V. \\ Sand 14 \\ 72076 Tübingen}
+\fancyhead[R]{\includegraphics[max height=2.7cm,max width=8cm]{assets/fsilogo.png}}
+\fancyfoot{} % clear all footer fields
+\fancyfoot[R]{Seite {\thepage} von {\pageref*{LastPage}}}
+\fancyfoot[L]{Version 2025/11}
+\fancyfoot[C]{}
+
+% begin content
+\begin{flushright}
+    Tübingen, den 27. November 2025
+\end{flushright}
+\vspace*{0cm} 
+\begin{center}
+    \vspace{3cm}
+    {\Huge Satzung} \\
+    \vspace{3cm}
+    {\Large des Vereins} \\
+    \vspace{3cm}
+    {\Huge Fachschaft Informatik Tübingen e.V.}
+\end{center}
+
+\pagebreak
+
+\setcounter{tocdepth}{1}
+\tableofcontents
+
+\pagebreak
+
+\section{Name, Sitz, Geschäftsjahr}
+\subsection{}
+Der Verein führt den Namen \textit{\glqq{}Fachschaft Informatik Tübingen\grqq{}}. Er soll in das Vereinsregister eingetragen werden und führt dann den Zusatz \textit{\glqq{}e.V.\grqq{}}. 
+\subsection{}
+Der Verein hat seinen Sitz in Tübingen. Der Verein wurde am 27.11.2025 errichtet.
+\subsection{}
+Der Verein ist politisch, ethnisch und konfessionell neutral.
+\subsection{}
+Das Geschäftsjahr des Vereins entspricht dem Kalenderjahr.
+\subsection{}
+Der Verein verfolgt ausschließlich und unmittelbar gemeinnützige Zwecke im Sinne des Abschnitts \textit{\glqq{}Steuerbegünstigte Zwecke\grqq{}} der Abgabeordnung.
+\subsection{}
+Zur besseren Lesbarkeit und Übereinstimmung mit Gesetzestexten wird in dieser Satzung bei Personenbezeichnungen die männliche Form verwendet. Sie gilt für alle Geschlechter (m/w/d).
+
+\section{Zweck des Vereins}
+\subsection{}
+Zweck des Vereins ist die Förderung der Bildung und der Studentenhilfe.
+\subsection{}
+Der Satzungszweck wird insbesondere verwirklicht durch:
+\begin{enumerate}
+    \item Betreuung von Studienanfängern
+    \item Bereitstellung von Lehrmaterialien (z.B. Skripte, Mitschriften und Altklausuren) und Arbeitsutensilien (z.B. Präparierbestecke und Laborkittel)
+    \item Ansprechpartner für studentische Belange
+    \item Anbieten einer kostenfreien Infrastruktur mit Mailinglisten und studiendienlichen Tools
+    \item Betreiben einer Homepage mit vereinsbezogenen Informationen
+    \item Organisation von Veranstaltungen mit Vernetzungscharakter
+    \item der allgemeine Erhalt des studentischen Wohls
+\end{enumerate}
+\subsection{}
+Der Verein ist selbstlos tätig; er verfolgt nicht in erster Linie eigenwirtschaftliche Zwecke.
+\subsection{}
+Mittel des Vereins dürfen nur für die satzungsgemäßen Zwecke verwendet werden. Die Mitglieder erhalten keine Zuwendungen aus Mitteln des Vereins.
+\subsection{}
+Es darf keine Person durch Ausgaben, die dem Zweck der Körperschaft fremd sind, oder durch unverhältnismäßig hohe Vergütungen begünstigt werden.
+\subsection{}
+Ehrenamtlich tätige Personen haben nur Anspruch auf Ersatz nachgewiesener Auslagen. Sie haben bei ihrem Ausscheiden keinerlei Ansprüche an das Vereinsvermögen.
+
+\section{Mitgliedschaft}
+\label{mitgliedschaft}
+\subsection{}
+\label{mitgliedschaft:1}
+Ordentliches Mitglied können alle natürlichen Personen werden, die 
+\begin{enumerate}
+    \item gemäß der Organisationssatzung der Verfassten Studierendenschaft der Universität Tübingen Mitglied des Fachschaftsbezirks Informatik sind, oder
+    \item eingeschriebener Doktorand an der Universität Tübingen mit Bezug zur Fachschaft Informatik sind.
+\end{enumerate}
+\subsection{}
+Fördermitglied können alle natürlichen oder juristischen Personen werden, die die Ziele des Vereins unterstützen.
+
+\section{Erwerb der Mitgliedschaft}
+\subsection{}
+Alle Arten der Mitgliedschaft werden aufgrund einer schriftlichen Beitrittserklärung erworben. Über die schriftliche Beitrittserklärung entscheidet abschließend der Vorstand.
+\subsection{}
+Im Fall der Ablehnung besteht ein Widerspruchsrecht. Über den Widerspruch entscheidet die nächste Mitgliederversammlung.
+
+\section{Beendigung der Mitgliedschaft}
+\label{beendigung_der_mitgliedschaft}
+\subsection{}
+\label{beendigung_der_mitgliedschaft:1}
+Die Mitgliedschaft endet,
+\begin{enumerate}
+    \item wenn das Mitglied schriftlich gegenüber dem Vorstand seinen Austritt erklärt,
+    \item wenn das Mitglied mit der Zahlung der Mitgliedsbeiträge zwei Jahre im Rückstand ist und der Vorstand daraufhin das Ende der Mitgliedschaft feststellt,
+    \item wenn die Mitgliederversammlung mit 3/4-Mehrheit den Ausschluss bestimmt, nachdem das Mitglied gegen die Satzung verstoßen oder das Vereinsansehen geschädigt hat,
+    \item bei natürlichen Personen mit dem Tod des Mitglieds, oder
+    \item bei juristischen Personen durch deren Auflösung.
+\end{enumerate}
+\subsection{}
+Die ordentliche Mitgliedschaft geht in eine Fördermitgliedschaft über, wenn
+\begin{enumerate}
+    \item das Mitglied in einem Zeitraum von zwei Jahren zu keiner Mitgliederversammlung erschienen ist, oder
+    \item falls die Bedingungen in \ref{mitgliedschaft} \ref{mitgliedschaft:1} nicht mehr erfüllt sind.
+\end{enumerate}
+\subsection{}
+Das ordentliche Mitglied hat den Wegfall der Bedingungen dem Vorstand anzuzeigen.
+
+\section{Mitgliedsbeiträge}
+\subsection{}
+Von den ordentlichen Mitgliedern und den Fördermitgliedern kann ein jährlicher, ggf. nach Mitgliedsart differenzierter Beitrag erhoben werden, welcher unabhängig vom Beitrittstermin jeweils für das Kalenderjahr erhoben wird.
+\subsection{}
+Näheres kann eine von der Mitgliederversammlung zu beschließende Beitragsordnung regeln.
+
+\section{Organe des Vereins}
+\subsection{}
+Organe des Vereins sind:
+\begin{enumerate}
+    \item der Vorstand
+    \item die Mitgliederversammlung
+\end{enumerate}
+
+\section{Der Vorstand}
+\subsection{}
+Der Vorstand besteht mindestens aus:
+\begin{enumerate}
+    \item dem 1. Vorsitzenden
+    \item dem 2. Vorsitzenden
+    \item dem Kassenwart
+\end{enumerate}
+\subsection{}
+Der Vorstand kann durch Beisitzer auf maximal fünf Personen erweitert werden. Alle Vorstandsmitglieder müssen natürliche Personen und Mitglied des Vereins sein.
+\subsection{}
+Die Vereinigung mehrerer Vorstandsämter in einer Person ist unzulässig.
+\subsection{}
+Der Vorstand im Sinne des § 26 BGB sind die Vorstandsmitglieder gemäß Absatz 1. Jedes Mitglied des Vorstandes ist einzelnd berechtigt, den Verein zu vertreten. 
+\subsection{}
+Die Vorstandsmitglieder sind ehrenamtlich tätig. Entstehende finanzielle Aufwendungen können ihnen vom Verein erstattet werden.
+
+\section{Rechte und Pflichten des Vorstandes}
+\label{rechte_pflichten_vorstand}
+\subsection{}
+Der Vorstand führt die Geschäfte des Vereins im Rahmen dieser Satzung.
+\subsection{}
+Der Vorstand führt die Beschlüsse der Mitgliederversammlung aus.
+\subsection{}
+Der Vorstand hat auf jeder Mitgliederversammlung Rechenschaft über die seit der letzten Mitgliederversammlung geleistete Arbeit abzulegen.
+\subsection{}
+\label{rechte_pflichten_vorstand:4}
+Der Vorstand ist berechtigt, in dringenden Fällen, in denen ein Beschluss der Mitgliederversammlung nicht rechtzeitig herbeigeführt werden kann, vorläufige Entscheidungen zu treffen. Diese Entscheidungen sind der nächsten Mitgliederversammlung zur Bestätigung vorzulegen. Ohne Bestätigung verlieren sie ihre Wirksamkeit.
+\subsection{}
+Absatz \ref{rechte_pflichten_vorstand:4} gilt nicht für den Ausschluss von Mitgliedern gemäß \ref{beendigung_der_mitgliedschaft} \ref{beendigung_der_mitgliedschaft:1} Punkt 3.
+
+\section{Berufung und Abbestellung des Vorstands}
+\subsection{}
+Der Vorstand wird von der Mitgliederversammlung auf die Dauer eines Jahres gewählt. Wiederwahl ist zulässig.
+\subsection{}
+Jedes Mitglied des Vorstands muss zum Zeitpunkt der Wahl ordentliches Mitglied des Vereins sein.
+\subsection{}
+Nach Ablauf der Amtszeit bleiben die Mitglieder des Vorstands bis zu einer Neuwahl des Vorstands im Amt.
+\subsection{}
+Eine vorgezogene Neuwahl des Vorstands kann von der Mitgliederversammlung mit einer absoluten Mehrheit beschlossen werden.
+\subsection{}
+Bei Ausscheiden eines Vorstandsmitglieds während der Amtsperiode wählt der Vorstand ein Ersatzmitglied aus den Reihen der ordentlichen Mitglieder für die restliche Amtsdauer des Ausgeschiedenen.
+
+\section{Vorstandssitzungen}
+\subsection{}
+Vorstandssitzungen finden nach Bedarf statt und werden grundsätzlich einvernehmlich einberufen. In Ausnahmefällen ist eine Vorstandssitzung aber auch dann einzuberufen, wenn dies von mindestens der Hälfte der Mitglieder des Vorstands beantragt wird.
+\subsection{}
+Der Vorstand ist beschlussfähig, wenn mindestens die Hälfte der Vorstandsmitglieder anwesend sind. Die Beschlüsse des Vorstands werden mit Stimmmehrheit der anwesenden Vorstandsmitglieder gefasst.
+\subsection{}
+Vorstandssitzungen sind nicht öffentlich. Auf Vorschlag eines Mitglieds können Gäste zu Sitzungen eingeladen werden. Über die Einladung ist ein Beschluss zu fassen.
+\subsection{}
+Vorstandssitzungen sind zu protokollieren.
+\subsection{}
+Die Vorstandssitzung wird vom 1. Vorsitzenden geleitet, die Vertretung übernimmt der 2. Vorsitzende.
+\subsection{}
+Das Nähere kann eine Geschäftsordnung regeln.
+
+\section{Die Mitgliederversammlung}
+\subsection{}
+Oberstes Organ ist die Mitgliederversammlung.
+\subsection{}
+Die Mitgliederversammlung ist zuständig für alle Angelegenheiten des Vereins, soweit sie nicht dem Vorstand zugewiesen sind. Im Einzelnen hat die Mitgliederversammlung u.a. folgende Aufgaben:
+\begin{enumerate}
+    \item Wahl und Abwahl des Vorstands
+    \item Entlastung des Vorstands
+    \item Wahl der Kassenprüfer des Vereins
+    \item Entscheidungen über den Widerspruch abgelehnter Bewerber
+    \item Ausschluss von Mitgliedern gemäß \ref{beendigung_der_mitgliedschaft} \ref{beendigung_der_mitgliedschaft:1} Punkt 3
+    \item Entscheidung über die Erhebung von Mitgliedsbeiträgen und ggf. eine Beitragsordnung
+    \item Änderungen der Satzung
+    \item Auflösung des Vereins
+\end{enumerate}
+\subsection{}
+Eine ordentliche Mitgliederversammlung findet mindestens einmal im Jahr statt.
+\subsection{}
+Die Mitgliederversammlung findet nicht öffentlich statt. Der Vorstand kann auf Antrag Gäste zulassen.
+\subsection{}
+Die Einladung zur Mitgliederversammlung wird den Mitgliedern zwei Wochen vor der Mitgliederversammlung unter Angabe der Tagesordnung an die von ihnen angegebene Mailadresse zugesendet. Die Einladung gilt als zugegangen, wenn sie an die letzte vom Mitglied angegebene E-Mail-Adresse versendet wurde.
+
+\section{Ablauf der Mitgliederversammlung}
+\label{to_mv}
+\subsection{}
+Die Mitgliederversammlung ist beschlussfähig, wenn sie frist- und formgerecht einberufen wurde.
+\subsection{}
+Jedes Mitglied kann bis zum Beginn der Mitgliederversammlung Anträge auf Ergänzung der Tagesordnung beim Vorstand stellen. Über die Annahme eines solchen Antrags entscheidet die Mitgliederversammlung durch Beschluss.
+\subsection{}
+Nicht Gegenstand eines Ergänzungsantrags können sein:
+\begin{enumerate}
+    \item Auflösung des Vereins,
+    \item Änderung der Satzung sowie
+    \item Ausschluss eines Mitglieds
+\end{enumerate}
+\subsection{}
+Einzelne Tagesordnungspunkte können auf Beschluss der Mitgliederversammlung unter Ausschluss der Öffentlichkeit behandelt werden.
+\subsection{}
+\label{to_mv:to}
+Die Tagesordnung jeder ordentlichen Mitgliederversammlung muss mindestens die folgenden Tagesordnungspunkte beinhalten:
+\begin{enumerate}
+    \item Beschluss der Tagesordnung,
+    \item Feststellung der Beschlussfähigkeit,
+    \item Geschäftsbericht des Vorstandes,
+    \item Bericht der Kassenprüfer, 
+    \item Entlastung des Vorstands sowie
+    \item Wahl des Vorstands
+\end{enumerate}
+\subsection{}
+Die Mitgliederversammlung wird vom Vorstand geleitet.
+
+\section{Beschlussfassung der Mitgliederversammlung}
+\subsection{}
+Jedes anwesende ordentliche Mitglied ist in der Mitgliederversammlung einfach stimmberechtigt. Fördermitglieder sind nicht stimmberechtigt, sie nehmen nur beratend an der Versammlung teil.
+\subsection{}
+Bei Beschlussfassung kann jedes anwesende, stimmberechtigte Mitglied mit \textit{Ja}, \textit{Nein} oder \textit{Enthaltung} stimmen. Zur Beschlussfassung genügt - falls nicht anders geregelt - eine Mehrheit der \textit{Ja}-Stimmen über den \textit{Nein}-Stimmen. Bei Stimmgleichheit ist der Antrag abgelehnt.
+\subsection{}
+Bei der Wahl des Vorstands und der Kassenprüfer werden, falls mehr Kandidaten zur Wahl stehen, als es Ämter zu besetzen gilt, die Kandidaten, die die meisten Stimmen auf sich vereinigen können, gewählt. Wahlen erfolgen einzeln pro Amt.
+\subsection{}
+Abstimmungen erfolgen grundsätzlich offen. Wenn ein stimmberechtigtes Mitglied Einspruch erhebt, erfolgt die jeweilige Abstimmung geheim.
+\subsection{}
+Die Mitgliederversammlung und ihre Beschlüsse sind zu protokollieren. Das Protokoll soll allen Mitgliedern zur Verfügung gestellt werden.
+\subsection{}
+Das Nähere kann eine Geschäftsordnung regeln.
+
+\section{Außerordentliche Mitgliederversammlung}
+\label{aus_mv}
+\subsection{}
+Der Vorstand veranstaltet eine außerordentliche Mitgliederversammlung, wenn
+\begin{enumerate}
+    \item die Belange des Vereins es erfordern,
+    \item der Kassenwart es für erforderlich hält, oder
+    \item mindestens ein Drittel der Mitglieder gemeinsam unter Angabe der Tagesordnung beim Vorstand eine solche beantragen.
+\end{enumerate}
+\subsection{}
+\label{aus_mv:2}
+Die außerordentliche Mitgliederversammlung findet zum nächstmöglichen Zeitpunkt statt. Sie unterliegt denselben Regeln wie die ordentliche Mitgliederversammlung.
+\subsection{}
+Abweichend zu Absatz \ref{aus_mv:2} kann von der Tagesordnung gemäß \ref{to_mv} \ref{to_mv:to} abgewichen werden.
+
+\section{Rechnungslegung und Kassenprüfung}
+\subsection{}
+Der Vorstand hat der Mitgliederversammlung über die Kassenführung Rechnung zu legen und fertigt einen Jahresabschluss an.
+\subsection{}
+Mit dem Vorstand wählt die ordentliche Mitgliederversammlung für die gleiche Amtszeit zwei Vereinsmitglieder zu Kassenprüfern. Sie prüfen am Ende jedes Geschäftsjahres die Kassenführung und den Jahresabschluss auf Richtigkeit und Vollständigkeit. Sie berichten der Mitgliederversammlung und beantragen die Entlastung des Vorstands.
+\subsection{}
+Die Kassenprüfer dürfen nicht Mitglieder des Vorstandes sein oder mit einem Mitglied des Vorstandes verwandt oder verschwägert sein. 
+\subsection{}
+Eine einmalige, konsekutive Wiederwahl eines Kassenprüfers ist zulässig. Nach drei Jahren ohne Bekleidung dieses Amtes ist die erneute Wiederwahl eines bereits vorher in dieser Position tätigen Kassenprüfers möglich.
+
+\section{Auflösung des Vereins}
+\subsection{}
+Der Verein wird durch Beschluss seiner Mitgliederversammlung oder aus gesetzlichen Gründen aufgelöst.
+\subsection{}
+Für die Auflösung des Vereins über die Mitgliederversammlung ist eine Anwesenheit von mindestens 6 ordentlichen Mitgliedern notwendig. Der Verein wird aufgelöst, falls eine Mehrheit von 3/4 der anwesenden Stimmberechtigten mit \textit{Ja} stimmt.
+\subsection{}
+Bei der Auflösung des Vereins erfolgt keine Rückgewähr des Vereinsvermögens an die Mitglieder des Vereins.
+\subsection{}
+Bei Auflösung des Vereins oder bei Wegfall steuerbegünstigter Zwecke fällt das Vermögen an den \textit{\glqq{}Verein zur Förderung studentischer Zusammenschlüsse e.V.\grqq{}} in Tübingen, der es unmittelbar und ausschließlich für gemeinnützige Zwecke zu verwenden hat.
+
+\section{Inkrafttreten}
+\subsection{}
+Die Satzung ist von der Mitgliederversammlung am 27.11.2025 beschlossen und tritt am gleichen Tag in Kraft.
+
+\vspace{5cm}
+\section*{}
+Die Gründungsmitglieder
+% end content
+
+\end{document}
