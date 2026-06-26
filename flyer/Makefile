@@ -4,8 +4,8 @@ SVGCONVERT = rsvg-convert
 A5_TARGET = flyer-a5
 A4_TARGET = flyer-a4
 SOURCE = flyer.tex
-LOGO_SVG = assets/denker.svg
-LOGO_PDF = assets/denker.pdf
+LOGO_SVG = assets/vereins-denker.svg
+LOGO_PDF = assets/vereins-denker.pdf
 CACHE_DIR = .cache
 TEXMFVAR_DIR = .texmf-var
 BUILD_ENV = TEXMFVAR=$(CURDIR)/$(TEXMFVAR_DIR) XDG_CACHE_HOME=$(CURDIR)/$(CACHE_DIR)
